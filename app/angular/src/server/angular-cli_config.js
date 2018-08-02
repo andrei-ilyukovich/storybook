@@ -80,7 +80,7 @@ export function applyAngularCliWebpackConfig(baseConfig, cliWebpackConfigOptions
   // cliStyleConfig.entry adds global style files to the webpack context
   const entry = {
     ...baseConfig.entry,
-    ...cliStyleConfig.entry,
+    iframe: [].concat(baseConfig.entry.iframe).concat(cliStyleConfig.entry.styles),
   };
 
   const mod = {
